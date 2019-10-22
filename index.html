@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anthology</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="animate.css">
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script type="text/javascript" src="wow.js"></script>
+	<script type="text/javascript" src="indexc.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+	<style type="text/css">
+		*{
+			margin:5px;
+		}
+		.slide-container{
+			margin:0;
+			padding:0;
+			display:flex;
+			width:100%;
+			height:520px;
+			overflow:hidden;
+			
+		}
+		
+		fieldset{
+			border:none;
+			font-family: 'Pacifico', cursive;
+			font-weight: 400;
+			padding:10px;
+			background-color: #f2f2f2;
+			border-radius:10px;
+		}
+		input[type=text],input[type=password]{
+			border:none;
+			font-family: 'Pacifico', cursive;
+			font-size:15px;
+			padding:10px;
+			background-color: #f8f8f8;
+		}
+		input[type=submit]{
+			border: none;
+			font-family: 'Pacifico', cursive;
+			padding: 20px;
+			background-color:white;
+			border-radius:100%;
+			text-align:center;
+			margin-left:40%;
+			cursor:pointer;
+		}
+		input[type=submit]:hover{
+			animation:brder 1s ease;
+			animation-fill-mode: forwards;
+		}
+		@keyframes brder{
+			
+			25%{
+				border-top: 1px solid black;
+			}
+			50%{
+				border-top: 1px solid black;
+				border-right: 1px solid black;
+			}
+			75%{
+				border-top: 1px solid black;
+				border-right: 1px solid black;
+				border-bottom: 1px solid black;
+			}
+			100%{
+				border-top: 1px solid black;
+				border-right: 1px solid black;
+				border-bottom: 1px solid black;
+				border-left: 1px solid black;
+			}
+		}
+	</style>
+</head>
+<body>
+<div class="page-content">
+	<div class="topnav">
+		<div class="flex-left" style="display:inline-block">
+		<a  href="#" class="suite">DISPLAY SUIT</a>
+		<a  href="#">+181-2200-06</a></div>
+		<a class="menu" href="#">
+		<div class="bar1"></div>
+		<div class="bar2"></div>
+		<div class="bar3"></div>
+		</a>
+		<div class="flex-right">
+		<a  class="brouche">VIEW BROUCHE</a>
+		<a  class="register">REGISTER</a></div>
+		</div>
+	<!-- <div class="slide-container">
+		<img src="img/i1.jpg" style="width:100%;height:100%">
+		<img src="img/i2.jpg" style="width:100%;height:100%">
+		<img src="img/i3.jpg" style="width:100%;height:100%">
+		<img src="img/i4.jpg" style="width:100%;height:100%">
+		<img src="img/i5.jpg" style="width:100%;height:100%">
+		<img src="img/i6.jpg" style="width:100%;height:100%">
+		<img src="img/i7.jpg" style="width:100%;height:100%">
+		<img src="img/i1.jpg" style="width:100%;height:100%">
+	</div>
+	<button id ="prevcl">prev</button>
+<button id ="nextcl">next</button> -->
+<div id="container">
+<div class="content" >
+	<p class="wow fadeInLeft" data-wow-duration="4s"><span style="font-size:2vw">It is an</span><br/><span style="font-size:4vw">Example</span><br /><span style="font-size:2vw">Website</span></p>
+</div></div>
+<div id="container2" class="wow slideInUp" data-wow-duration="0.5s">
+<div class="content">
+	<p class="wow fadeInLeft" data-wow-duration="4s"><span style="font-size:2vw">It is an</span><br/><span style="font-size:4vw">Example222</span><br /><span style="font-size:2vw">Website</span></p>
+</div></div>
+<div class="menubar" style="display:none;">
+	<a href="#" class=" wow fadeInUp" data-wow-delay="0s">Home</a>
+	<a href="#" class=" wow fadeInUp" data-wow-delay="0.4s">About us</a>
+	<a href="#" class=" wow fadeInUp"  data-wow-delay="0.8s">Contact Us</a>
+</div>
+</div>
+<div class="brouche-content">
+	<button>
+		<div class="b1"></div>
+		<div class="b2"></div>
+		<div class="b3"></div>
+	</button>
+	This is brouche content</div>
+	<div class="suite-content">
+	<button>
+		<div class="b1"></div>
+		<div class="b2"></div>
+		<div class="b3"></div>
+	</button>
+	This is suite content</div>
+	<div id="myModal" class="modal">
+		<div class="RegisterForm">
+		<span class="close-register" style="padding-right:20px">&times;</span>
+	<form action="register.php" method="post">
+		<fieldset>
+			<legend style="font-size:30px;text-align:center">Register</legend>
+			<b> Name:</b><br/>
+			<input type = "text" name="firstname" placeholder="First Name"  required>
+			<input type = "text" name="lastname" placeholder="Last Name" required><br/>
+			<b>Email:</b><br>
+			<input type="text" name="email" placeholder = "email@example.com" required><br>
+			<b>Password:</b><br>
+			<input type="password" name="psw" placeholder = "123456" required><br>
+			<b>Repeat-Password:</b><br>
+			<input type="password" name="repeat-psw" placeholder = "123456" required><br>
+			<input type="radio"  name= "male" value="male">Male
+			<input type="radio"  name= "female" value="female">Female<br/>
+			<input type="checkbox" value="Remember">Remember Me<br>
+			<input type="submit"  value="Submit">
+		</fieldset>
+	</form>
+</div>
+</div>
+
+</body>
+</html>

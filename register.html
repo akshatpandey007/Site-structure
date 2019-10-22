@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anthology</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="animate.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script type="text/javascript" src="wow.js"></script>
+	<style type="text/css">
+		*{
+			margin:0;
+			padding:0;
+			box-sizing:border-box;
+		}
+		.slide-container{
+			display:flex;
+			width:100%;
+			height:520px;
+			overflow:hidden;
+			
+		}
+		
+	</style>
+</head>
+<body>
+
+	<div class="slide-container">
+		<img src="img/i1.jpg" style="width:100%;height:100%">
+		<img src="img/i2.jpg" style="width:100%;height:100%">
+		<img src="img/i3.jpg" style="width:100%;height:100%">
+		<img src="img/i4.jpg" style="width:100%;height:100%">
+		<img src="img/i5.jpg" style="width:100%;height:100%">
+		<img src="img/i6.jpg" style="width:100%;height:100%">
+		<img src="img/i7.jpg" style="width:100%;height:100%">
+		<img src="img/i1.jpg" style="width:100%;height:100%">
+	</div>
+	</div>
+<button id ="prev">prev</button>
+<button id ="next">next</button>
+<script>
+$(()=>{
+	var slides = $('.slide-container img');
+	var i =0;
+	var size = $(slides[0]).prop("clientWidth");
+	$('#next').click(function(){
+		++i;
+
+		slides.css({"transition":"none"});
+		if(i>=$('.slide-container img').length){
+			i=0;	
+		}
+		else{
+			slides.css({"transition":"2s","transition-timing-function":"ease"})
+		}
+		slides.css("transform","translateX("+(-1)*size*i+"px)");
+	});
+	$('#prev').click(function(){
+		--i;
+		slides.css({"transition":"none"});
+		if(i<0)
+			i=$('.slide-container img').length-1;
+		else{
+			slides.css({"transition":"2s","transition-timing-function":"ease"})
+		}
+		console.log($('.slide-container img').length);
+		slides.css("transform","translateX("+(-1)*size*i+"px)");
+	});
+
+console.log($('#next'));
+var t = setInterval(function(){
+	$("#next").trigger('click');
+},3000);
+
+});
+</script>
+</body>
+</html>

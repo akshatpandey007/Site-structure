@@ -1,0 +1,266 @@
+*{
+	box-sizing: border-box;
+}
+html{
+	margin:0;
+	padding:0;
+	scroll-behavior: smooth;
+}
+body{
+	background-color: #f2f2f2;
+}
+.topnav{
+	display:flex;
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	flex-direction:row;
+	background:transparent;
+	padding:0 10px;
+	height:20vh;
+	flex-wrap:nowrap;
+	align-items:center;
+	justify-content: space-between;	
+	transition:0.4s;
+	z-index:10;
+	border-bottom:0.5px solid lightgrey;
+}
+
+.top_panel_fixed{
+	position:sticky;
+	top:0;
+	height:10vh;
+	background: white;
+	border:1px solid lightgrey;
+}
+.top_panel_fixed a,.top_panel_fixed div{
+	background: white;
+}
+
+.topnav .flex-right{
+	text-align:right;
+	cursor:pointer;
+
+}
+.topnav .menu{
+	text-align:center;
+	flex-basis:30px;
+	
+}
+.topnav .flex-left{
+	text-align:left;
+	
+}
+.topnav a{
+	padding:0 5px;
+	text-decoration: none;
+	color:black;
+	font-family: "SaaSeriesFD",sofia-pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	font-weight: 500;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size:14px;
+}
+.topnav .menu div{
+	height:2px;
+	background:black;
+	margin:3px 0;
+	transition:0.4s;
+}
+
+.change .bar1,.brouche-visible .hoverbtn .b1,.suite-visible .hoverbtn .b1{
+		-webkit-transform:rotate(45deg) translate(4px,4px);
+	transform:rotate(45deg) translate(4px,4px);
+}
+.change .bar2,.brouche-visible .hoverbtn .b2,.suite-visible .hoverbtn .b2{display:none;}
+.change .bar3,.brouche-visible .hoverbtn .b3,.suite-visible .hoverbtn .b3{
+	-webkit-transform:rotate(-45deg) translate(-1px,0);
+	transform:rotate(-45deg) translate(-1px,0);
+}
+#container,#container2{
+	display:flex;
+	justify-content:center;
+	width:100%;
+	height:85vh;
+	margin-bottom:3vh;
+}
+.content{
+	background-color:white;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	width:80%;
+	height: 80vh;
+
+}
+.content p span,.content p{
+	background-color:white;
+	font-family: "SaaSeriesFD",sofia-pro,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	text-align:center;
+	transition:2s;
+	
+}
+.menubar{
+	position:fixed;
+	top:20vh;
+	left:0;
+	background-color:rgba(255,255,255,1);
+	width:100%;
+	height:100vh; 
+	transition:0.4s;
+}
+
+.menubar a{
+	display:block;
+	background:inherit;
+	font-size:40px;
+	text-decoration:none;
+	color:rgba(50,50,50,1);
+	font-family: "Canela Web",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	font-weight: 500;
+	text-align:center;
+	margin:10px;
+	cursor:pointer;
+}
+
+/*.menubar .animated{
+	font-family: "Canela Web",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+	animation-delay: 2s;
+	animation-direction:reverse;
+	animation:slideUp 5s ease;
+
+}*/
+@keyframes slideUp{
+	0%{
+		
+		max-height:0;
+	}
+	100%{
+		
+		max-height:100%;
+	}
+}
+
+.brouche-content,.suite-content{
+	position:fixed;
+	height:100vh;
+	width:0;
+	right:0;
+	top:0;
+	background-color: lightgrey;
+	z-index:20;
+	overflow:hidden;
+}
+.suite-content{
+	left:0;
+	background-color: red;
+}
+.brouche-visible,.suite-visible{
+	width:0;
+	animation:slide-brouche 1.2s ease;
+	animation-fill-mode: forwards;
+}
+
+@keyframes slide-brouche{
+	0%{
+		width:0;
+		background-color: lightgrey;
+	}
+	100%{
+		width:30%;
+		background-color: #f2f2f2;
+	}
+}
+.brouche-content button ,.suite-content button{
+	position:relative;
+	background:inherit;
+	display:block;
+	width:30px;
+	left:50%;
+	text-align: center;
+	border:none;
+	margin:10px;
+	padding:5px;
+}
+
+.brouche-content button div, .suite-content button div{
+	background-color: black;
+	width: 100%;
+	height: 2px;
+	margin:3px;
+	transition:0.2s;
+}
+
+.brouche-visible .hoverbtn div,.suite-visible .hoverbtn div{
+	background-color: red
+}
+
+.brouche-content button .b1,.suite-content button .b1{
+	transform:rotate(60deg) translate(2px,-3px);
+}
+.brouche-content button .b2,.suite-content button .b2{
+	transform:translate(-0px,5px);
+}
+.brouche-content button .b3,.suite-content button .b3{transform:rotate(-60deg)  translate(3.8px,-9.5px);}
+.page-content{
+	transition:1.2s;
+}
+.modal{
+  margin:0;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Sit on top */
+  padding: 30px 0; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+fieldset{
+	-webkit-box-shadow: 9px 6px 10px -1px rgba(0,0,0,0.7);
+-moz-box-shadow: 9px 6px 10px -1px rgba(0,0,0,0.7);
+box-shadow: 9px 6px 10px -1px rgba(0,0,0,0.7);
+}
+.RegisterForm{
+	position:fixed;
+	width:50%;
+	height:50%;
+	margin-left:25%;
+	border:none;
+	background-color: transparent;
+	animation:appear 1s ease;
+	animation-fill-mode: forwards;
+}
+@keyframes appear{
+	0%{
+		opacity:0;
+	}
+	100%{
+		opacity:1;
+	}
+}
+.close-register {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-register:hover,
+.close-register:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#container{
+	background-image:url("img/i2/jpg");
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+}
